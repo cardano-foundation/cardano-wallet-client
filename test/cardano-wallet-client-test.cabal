@@ -1,0 +1,50 @@
+cabal-version: 3.0
+name:          cardano-wallet-client-test
+version:       0.1.0.0
+synopsis:      Generated API client for the cardano-wallet.
+description:   Please see README.md
+homepage:      https://github.com/cardano-foundation/cardano-wallet
+license:       Apache-2.0
+author:        Cardano Foundation HAL Team
+maintainer:    hal@cardanofoundation.org
+copyright:     2023 Cardano Foundation
+category:      Testing
+build-type:    Simple
+
+common options
+  default-language:   GHC2021
+  default-extensions: OverloadedStrings
+  ghc-options:
+    -O2 -Wall -Wincomplete-record-updates -Wincomplete-uni-patterns
+    -Wmissing-deriving-strategies -Wunused-foralls -Wunused-foralls
+    -fprint-explicit-foralls -fprint-explicit-kinds -Wcompat
+    -Widentities -Werror=incomplete-patterns -Wredundant-constraints
+    -Wpartial-fields -Wtabs -Wmissing-local-signatures -fhelpful-errors
+    -fprint-expanded-synonyms -fwarn-unused-do-bind
+    -fwarn-incomplete-uni-patterns -freverse-errors
+
+  mixins:
+    base hiding (Prelude),
+    relude (Relude as Prelude, Relude.Container.One),
+    relude
+
+common dependencies
+  build-depends:
+    , base    ^>=4.16.4.0
+    , relude  ^>=1.2.0.0
+
+test-suite cardano-wallet-client-test
+  import:             options, dependencies
+  type:               exitcode-stdio-1.0
+  hs-source-dirs:     src
+  main-is:            sydtest-discover.hs
+  ghc-options:        -threaded -rtsopts -with-rtsopts=-N
+  other-modules:      WalletSpec
+  build-tool-depends: sydtest-discover:sydtest-discover
+  build-depends:
+    , cardano-wallet-client
+    , http-client            ^>=0.7.13.1
+    , http-types             ^>=0.12.3
+    , sydtest                ^>=0.15.1
+    , sydtest-discover       ^>=0.0.0.3
+    , with-utf8              ^>=1.0.2.4

@@ -1,0 +1,124 @@
+cabal-version: 1.12
+
+name:           cardano-wallet-client
+version:        0.1.0.0
+build-type:     Simple
+
+library
+  exposed-modules:
+      Wallet
+      Wallet.Operations.PostAnyAddress
+      Wallet.Operations.InspectAddress
+      Wallet.Operations.GetBlocksLatestHeader
+      Wallet.Operations.ListByronWallets
+      Wallet.Operations.PostByronWallet
+      Wallet.Operations.GetByronWallet
+      Wallet.Operations.PutByronWallet
+      Wallet.Operations.DeleteByronWallet
+      Wallet.Operations.ListByronAddresses
+      Wallet.Operations.ImportAddresses
+      Wallet.Operations.CreateAddress
+      Wallet.Operations.ImportAddress
+      Wallet.Operations.ListByronAssets
+      Wallet.Operations.GetByronAssetDefault
+      Wallet.Operations.GetByronAsset
+      Wallet.Operations.ByronSelectCoins
+      Wallet.Operations.MigrateByronWallet
+      Wallet.Operations.CreateByronWalletMigrationPlan
+      Wallet.Operations.PutByronWalletPassphrase
+      Wallet.Operations.PostByronTransactionFee
+      Wallet.Operations.GetByronUTxOsStatistics
+      Wallet.Operations.ListByronTransactions
+      Wallet.Operations.PostByronTransaction
+      Wallet.Operations.GetByronTransaction
+      Wallet.Operations.DeleteByronTransaction
+      Wallet.Operations.GetByronWalletUtxoSnapshot
+      Wallet.Operations.GetNetworkClock
+      Wallet.Operations.GetNetworkInformation
+      Wallet.Operations.GetNetworkParameters
+      Wallet.Operations.PostExternalTransaction
+      Wallet.Operations.GetSettings
+      Wallet.Operations.PutSettings
+      Wallet.Operations.ListSharedWallets
+      Wallet.Operations.PostSharedWallet
+      Wallet.Operations.GetSharedWallet
+      Wallet.Operations.DeleteSharedWallet
+      Wallet.Operations.ListSharedAddresses
+      Wallet.Operations.PatchSharedWalletInDelegation
+      Wallet.Operations.GetAccountKeyShared
+      Wallet.Operations.PostAccountKeyShared
+      Wallet.Operations.GetSharedWalletKey
+      Wallet.Operations.PatchSharedWalletInPayment
+      Wallet.Operations.GetUTxOsStatisticsShared
+      Wallet.Operations.ListSharedTransactions
+      Wallet.Operations.ConstructSharedTransaction
+      Wallet.Operations.DecodeSharedTransaction
+      Wallet.Operations.SignSharedTransaction
+      Wallet.Operations.SubmitSharedTransaction
+      Wallet.Operations.GetSharedTransaction
+      Wallet.Operations.GetSharedWalletUtxoSnapshot
+      Wallet.Operations.GetCurrentSmashHealth
+      Wallet.Operations.ListStakePools
+      Wallet.Operations.QuitStakePool
+      Wallet.Operations.GetMaintenanceActions
+      Wallet.Operations.PostMaintenanceAction
+      Wallet.Operations.JoinStakePool
+      Wallet.Operations.ListWallets
+      Wallet.Operations.PostWallet
+      Wallet.Operations.GetWallet
+      Wallet.Operations.PutWallet
+      Wallet.Operations.DeleteWallet
+      Wallet.Operations.ListAddresses
+      Wallet.Operations.ListAssets
+      Wallet.Operations.GetAssetDefault
+      Wallet.Operations.GetAsset
+      Wallet.Operations.SelectCoins
+      Wallet.Operations.GetDelegationFee
+      Wallet.Operations.GetAccountKey
+      Wallet.Operations.PostAccountKey
+      Wallet.Operations.GetWalletKey
+      Wallet.Operations.MigrateShelleyWallet
+      Wallet.Operations.CreateShelleyWalletMigrationPlan
+      Wallet.Operations.PutWalletPassphrase
+      Wallet.Operations.PostTransactionFee
+      Wallet.Operations.PostPolicyId
+      Wallet.Operations.GetPolicyKey
+      Wallet.Operations.PostPolicyKey
+      Wallet.Operations.SignMetadata
+      Wallet.Operations.ListStakeKeys
+      Wallet.Operations.GetUTxOsStatistics
+      Wallet.Operations.ListTransactions
+      Wallet.Operations.PostTransaction
+      Wallet.Operations.BalanceTransaction
+      Wallet.Operations.ConstructTransaction
+      Wallet.Operations.DecodeTransaction
+      Wallet.Operations.SignTransaction
+      Wallet.Operations.SubmitTransaction
+      Wallet.Operations.GetTransaction
+      Wallet.Operations.DeleteTransaction
+      Wallet.Operations.GetWalletUtxoSnapshot
+      Wallet.Types
+      Wallet.TypeAlias
+      Wallet.Types.ScriptTemplateValue
+      Wallet.Types.ScriptValue
+      Wallet.Configuration
+      Wallet.SecuritySchemes
+      Wallet.Common
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+    , text
+    , ghc-prim
+    , http-conduit
+    , http-client
+    , http-types
+    , bytestring
+    , aeson
+    , unordered-containers
+    , vector
+    , scientific
+    , time
+    , mtl
+    , transformers
+  default-language: Haskell2010
